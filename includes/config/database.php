@@ -1,12 +1,8 @@
 <?php
 
-function conectarDB() : mysqli {
-    $DB_HOST = 'localhost';
-    $DB_USER = 'root';
-    $DB_USER = 'root';
-    $DB_NAME = 'bienesraices_crud';
-    $DB_PORT = '';
-    $db = new mysqli($DB_HOST, $DB_USER,$DB_USER, $DB_NAME);
+function conectarDB($db_variable) : mysqli {
+
+    $db = new mysqli($db_variable['DB_HOST'], $db_variable['DB_USER'],$db_variable['DB_PASSWORD'], $db_variable['BD_NAME']);
 
     if (!$db) {
         echo "Error no se pudo conectar";
