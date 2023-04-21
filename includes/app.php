@@ -1,11 +1,11 @@
 <?php
-
+require __DIR__ . '/../vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->safeLoad();
 require 'funciones.php';
 require 'config/database.php';
-require __DIR__ . '/../vendor/autoload.php';
 
 //Conectarnos a la db
-
 $db = conectarDB();
 use Model\ActiveRecord;
 
