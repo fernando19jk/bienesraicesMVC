@@ -1,8 +1,8 @@
 <?php
 
-function conectarDB($db_variable) : mysqli {
+function conectarDB() : mysqli {
 
-    $db = new mysqli($db_variable['DB_HOST'], $db_variable['DB_USER'],$db_variable['DB_PASSWORD'], $db_variable['BD_NAME']);
+    $db = new mysqli($_ENV['BD_NAME']['DB_HOST'], $_ENV['BD_NAME']['DB_USER'],$_ENV['BD_NAME']['DB_PASSWORD'], $_ENV['BD_NAME']['BD_NAME']);
 
     if (!$db) {
         echo "Error no se pudo conectar";
